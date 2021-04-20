@@ -9,8 +9,18 @@ body {
   background-color: #1e1e1e;
   font-family: Helvetica, Arial, sans-serif;
   color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page__icon {
+  font-size: 100px;
+  margin: 0;
 }
 
 .page__title {
   font-size: 50px;
+  text-transform: uppercase;
 }
