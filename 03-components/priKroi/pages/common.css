@@ -1,0 +1,15 @@
+@import '../blocks/page/page.css';
+@import '../blocks/page/_type/page_type_one-screen.css';
+@import '../blocks/header/header.css';
+@import '../blocks/header/__menu-link/header__menu-link.css';
+@import '../blocks/logo/logo.css';
+@import '../blocks/logo/__icon/logo__icon.css';
+@import '../blocks/content/content.css';
+@import '../blocks/cover/cover.css';
+@import '../blocks/cover/__description/cover__description.css';
+@import '../blocks/cover/__image/cover__image.css';
+@import '../blocks/footer/footer.css';
+@import '../blocks/footer/__link/footer__link.css';
+@import '../blocks/paragraph/paragraph.css';
+@import '../blocks/content/__paragraph/content__paragraph.css';
+@import '../blocks/button/button.css';

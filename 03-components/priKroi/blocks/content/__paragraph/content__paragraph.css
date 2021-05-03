@@ -1,0 +1,11 @@
+.content__paragraph {
+  margin-bottom: 20px;
+}
+
+.content__paragraph:first-of-type {
+  margin-top: 40px;
+}
+
+.content__paragraph:last-of-type {
+  margin-bottom: 0;
+}

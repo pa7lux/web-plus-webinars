@@ -1,0 +1,9 @@
+.button_theme_dark {
+  color: white;
+  border: 1px solid #fff;
+}
+
+.button_theme_dark:hover {
+  background-color: #fff;
+  color: #000;
+}
