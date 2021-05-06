@@ -1,0 +1,266 @@
+/* Напишем анимации на стриме */
+
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation-with-translate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.rotation {
+  animation: rotation linear 5s infinite;
+}
+
+.rotation-with-translate {
+  animation: rotation-with-translate linear 5s infinite;
+}
+
+html {
+  /* Пробросим высоту и объясним, зачем и как */
+  height: 100%;
+}
+
+.page {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #f8f8ff;
+}
+
+/* Проговорить про ширину секции */
+
+.page__content-section {
+  width: 95%;
+  margin: auto;
+}
+
+.page__title {
+  font-size: 36px;
+  margin: 60px 0 40px;
+}
+
+/* Ширина для любых случаев */
+.header {
+  width: 100%;
+}
+
+
+
+/* 95% ширины, растянем контент, 80px высоты, по центру */
+
+.header__wrapper {
+  width: 95%;
+  margin: auto;
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Белый текст */
+.header_theme_dark {
+  color: #fff;
+}
+
+.header__logo {
+  height: 60px;
+}
+
+/* Пояснить за наследование и закрасить svg белым*/
+.header_theme_dark .header__logo {
+  fill: #fff;
+}
+
+.header__link {
+  /* Ссылки не наследуют стили, сделать наследуемым цвет */
+  color: inherit;
+  font-size: 14px;
+  text-decoration: none;
+  /* Отступы между ссылками 20 */
+  margin-right: 20px;
+}
+
+.header__link:hover {
+  text-decoration: underline;
+}
+
+.header__link:last-of-type {
+  /* Обнуление */
+  margin-right: 0;
+}
+
+/* Отнаследуем высоту от родителя и предположим позиционирование внутри*/
+.cover {
+  position: relative;
+  height: inherit;
+}
+
+/* Позиционируем абсолютно */
+.cover__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Уточняем высоту для внутреннего блока 600px */
+.cover_type_inner {
+  height: 600px;
+}
+
+/* Подгоним видео под блок */
+
+.cover__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Полупрозрачный черный оверлэй поверх видео */
+.cover__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+}
+
+/* Отдельный модификатор "все по центру внутри оверлэя" */
+.cover__overlay_inner-content_centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Текст и иконка выровнены по центру */
+
+.cover__title {
+  margin: 0;
+  color: #fff;
+  font-size: 80px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover__decoration-letter {
+  width: 100px;
+  margin: 0 20px;
+}
+
+.cover__image_fill_white {
+  fill: #fff;
+}
+
+.cover__image_size_large {
+  width: 150px;
+}
+
+/* Разместим бордер по центру поверх картинки */
+
+.cover__border {
+  width: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* Карточки с переносом */
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 400px);
+  gap: 40px;
+}
+
+.card {
+  position: relative;
+}
+
+/* Маркеры налево и вверх на 10 и 12 соответственно */
+.card__marker {
+  position: absolute;
+  top: -10px;
+  left: -12px;
+  padding: 8px;
+  box-shadow: 0 0 2px black;
+}
+
+.card__marker_type_dead {
+  background-color: #000;
+  color: #fff;
+}
+
+.card__marker_type_alive {
+  background-color: #fff;
+  color: #000;
+}
+
+.card__title {
+  font-size: 20px;
+  margin: 20px o;
+}
+
+/* Подогнать картинки под всю ширину и 400 в высоту */
+
+.card__image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.card__text {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+
+/* Построить сетку на гридах, сстрока высоты 350, гэп 4 */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 350px);
+  gap: 4px;
+}
+
+/* Подогнать картинки */
+.photo-grid__item {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Область первого элемента */
+
+.photo-grid__item:first-of-type {
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+
+/* Область второго элемента */
+
+.photo-grid__item:nth-of-type(4) {
+  grid-column-start: 2;
+  grid-column-end: 4;
+
+}
+
+.footer {
+  min-height: 80px;
+  background-image: linear-gradient(to bottom, #f8f8ff, grey);
+}
